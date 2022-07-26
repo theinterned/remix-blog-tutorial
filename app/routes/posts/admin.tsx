@@ -1,6 +1,6 @@
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import { getPosts } from "~/models/post.server";
 
 type LoaderData = {
@@ -29,7 +29,9 @@ export default function PostAdmin() {
             ))}
           </ul>
         </nav>
-        <main className="col-span-4 md:col-span-3">...</main>
+        <main className="col-span-4 md:col-span-3">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
